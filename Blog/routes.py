@@ -1,4 +1,5 @@
 from flask import render_template, flash, url_for, redirect, request, abort
+from flask.globals import session
 from Blog import app, bcrypt, db
 from Blog.forms import RegistrationForm, LoginForm, PostForm, ForgetForm, ChangePassword
 from Blog.models import User, Post
@@ -51,6 +52,7 @@ def forget():
 @app.route('/logout')
 def logout():
     logout_user()
+    session.clear()
     return redirect(url_for('login'))
 
 
