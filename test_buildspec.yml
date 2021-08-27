@@ -5,6 +5,7 @@ phases:
       python: 3.7
     commands:
       - pip3 install pytest
+      - pip3 install -r requirement.txt
   build:
     commands:
       - python -m pytest
