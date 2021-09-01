@@ -1,3 +1,6 @@
+from flask.wrappers import Response
+
+
 def test_login_page(client):
     """
     GIVEN a Flask application configured for testing
@@ -18,7 +21,7 @@ def test_valid_login_logout(client):
     THEN check the response is valid
     """
     response = client.post('/login',
-                                data=dict(email='ataulm786@gmail.com', password='Ataul@786'),
+                                data=dict(email='abc@gmail.com', password='Ataul@786'),
                                 follow_redirects=True)
     assert response.status_code == 200
 
@@ -29,4 +32,3 @@ def test_valid_login_logout(client):
     """
     response = client.get('/logout', follow_redirects=True)
     assert response.status_code == 200
-
