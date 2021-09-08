@@ -15,3 +15,6 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
 from Blog import routes
+from Blog import db
+
+db.create_all()
