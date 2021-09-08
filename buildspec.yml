@@ -7,9 +7,7 @@ phases:
       - pip3 install -r requirements.txt
   build:
     commands:
-      - python
-      - from Blog import db
-      - db.create_all()
+      - python app.py
 
 artifacts:
   files:
