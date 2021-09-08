@@ -2,10 +2,14 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto11
-build:
-  commands:
-    - echo Building...
+      python: 3.8
+    commands:
+      - pip3 install -r requirements.txt
+  build:
+    commands:
+      - python
+      - from Blog import db
+      - db.create_all()
 
 artifacts:
   files:
